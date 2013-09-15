@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 the original author or authors.
+ * Copyright 2012-2013 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@
  */
 class DialogsJavafxGriffonPlugin {
     // the plugin version
-    String version = '0.1'
+    String version = '0.2.0'
     // the version or versions of Griffon the plugin is designed for
-    String griffonVersion = '1.1.0 > *'
+    String griffonVersion = '1.4.0 > *'
     // the other plugins this plugin depends on
-    Map dependsOn = [javafx: '0.8']
+    Map dependsOn = [javafx: '0.10.0']
     // resources that are included in plugin packaging
     List pluginIncludes = []
     // the plugin license
@@ -42,13 +42,14 @@ class DialogsJavafxGriffonPlugin {
 
     List authors = [
         [
+            id: 'aalmiray',
             name: 'Andres Almiray',
             email: 'aalmiray@yahoo.com'
         ]
     ]
     String title = 'Common JavaFX dialogs'
     String description = '''
-The goal of this plugin is to provide a set of reusable dialogs for JavaFX based application.
+The goal of this plugin is to provide a set of reusable dialogs for JavaFX based applications.
 
 Usage
 -----
@@ -64,7 +65,7 @@ Making use of this new group is as easy as invoking
 
     withMVCGroup('<dialog_name>') { m, v, c -> c.show() }
 
-id the dialog's modality is set to `Modality.APPLICATION_MODAL` (default) or `Modality.WINDOW_MODAL`. Use this version if the modality
+if the dialog's modality is set to `Modality.APPLICATION_MODAL` (default) or `Modality.WINDOW_MODAL`. Use this version if the modality
 is set to `Modality.NONE`
 
     def (m, v, c) = createMVCGroup('<dialog_name>')
